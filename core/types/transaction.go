@@ -58,6 +58,10 @@ type Transaction struct {
 	from atomic.Value
 }
 
+func (tx *Transaction) GetTime() time.Time {
+	return tx.time
+}
+
 // NewTx creates a new transaction.
 func NewTx(inner TxData) *Transaction {
 	tx := new(Transaction)
